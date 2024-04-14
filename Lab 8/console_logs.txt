@@ -1,0 +1,274 @@
+Question 1: Create Database: Create a MongoDB database named AIML. 
+
+Code: use('AIML'); 
+
+Output: switched to db AIML 
+
+
+Question 2: Create Collection: Create a collection named employee within the AIML database. 
+
+Code: db.createCollection('employee'); 
+
+Output: [object Object] 
+
+
+Question 3: Create Collection: Create a collection named employee within the AIML database. 
+
+Code: const employeeData = JSON.parse(fs.readFileSync('employee.json'));
+out3 = db.employee.insertMany(employeeData); 
+
+Output: [object Object] 
+
+
+Question 4: insertOne: Inserts a single document into the collection. { 'Id': 21, 'Name': 'John Doe', 'Project_id': 2, 'Hrs_worked': 35 } 
+
+Code:  db.employee.insertOne({ "Id": 21, "Name": "John Doe", "Project_id": 2, "Hrs_worked": 35 }); 
+
+Output: [object Object] 
+
+
+Question 5: insertMany: Inserts multiple documents into the collection. { 'Id': 22, 'Name': 'Jane Smith', 'Project_id': 1, 'Hrs_worked': 28 }, { 'Id': 23, 'Name': 'Alice Johnson', 'Project_id': 3, 'Hrs_worked': 42 } 
+
+Code:  db.employee.insertMany([ { "Id": 22, "Name": "Jane Smith", "Project_id": 1, "Hrs_worked": 28 }, { "Id": 23, "Name": "Alice Johnson", "Project_id": 3, "Hrs_worked": 42 } ]); 
+
+Output: [object Object] 
+
+
+Question 6: updateOne: Updates a single document that matches the filter. { 'Id': 21 }, { $set: { 'Hrs_worked': 40 } } 
+
+Code: db.employee.updateOne( { "Id": 21 }, { $set: { "Hrs_worked": 40 } }); 
+
+Output: [object Object] 
+
+
+Question 7: updateMany: Updates multiple documents that match the filter. { 'Hrs_worked': { $gt: 30 } }, { $set: { 'Overtime': true } } 
+
+Code: db.employee.updateMany( { "Hrs_worked": { $gt: 30 } }, { $set: { "Overtime": true } }); 
+
+Output: [object Object] 
+
+
+Question 8: find an employee by their ID. 
+
+Code: db.employee.findOne({ Id: 21 }); 
+
+Output: [object Object] 
+
+
+Question 9: How would you retrieve all employees who are assigned to a specific project ID?
+Code: db.employee.find({ Project_id: 2 }); 
+
+Output: [object Object] 
+
+
+Question 10: Write a query to find employees who have worked more than 30 hours. 
+
+Code: db.employee.find({ Hrs_worked: { $gt: 30 } }); 
+
+Output: [object Object] 
+
+
+Question 11: Can you demonstrate how to use the $gt operator to find employees who are older than 40? 
+
+Code: db.employee.find({ Age: { $gt: 40 } }); 
+
+Output: [object Object] 
+
+
+Question 12: Explain the purpose of sorting in MongoDB queries. 
+
+Answer: Sorting in MongoDB organizes query results based on specified fields, facilitating data analysis and presentation, improving performance with indexed fields, and enhancing user experience through ordered document retrieval. 
+
+
+Question 13: Sort the Employee table based on Age in Ascending order and display. 
+
+Code: db.employee.find().sort({ Age: 1 }); 
+
+Output: [object Object] 
+
+
+Question 14: Sort the Employee table based on Hrs_worked in Descending order and display. 
+
+Code: db.employee.find().sort({ Hrs_worked: -1 }); 
+
+Output: [object Object] 
+
+
+Question 15: Find Employee whose age is greater than 30 and Hrs_worked greater than 20. 
+
+Code: db.employee.find({ Age: { $gt: 30 }, Hrs_worked: { $gt: 20 } }); 
+
+Output: [object Object] 
+
+
+Question 16: Find Employee whose Gender is Male or Hrs_worked greater than 25. 
+
+Code: db.employee.find({ $or: [{ Gender: "Male" }, { Hrs_worked: { $gt: 25 } }] }); 
+
+Output: [object Object] 
+
+
+Question 17: Find Employee whose Project_id is not 3. 
+
+Code: db.employee.find({ Project_id: { $ne: 3 } }); 
+
+Output: [object Object] 
+
+
+Question 18: Write a MongoDB query to find all employees who are between the ages of 25 and 35. 
+
+Code: db.employee.find({ Age: { $gte: 25, $lte: 35 } }); 
+
+Output: [object Object] 
+
+
+Question 19: How would you retrieve employees who have worked between 20 and 30 hours? 
+
+Code: db.employee.find({ Hrs_worked: { $gte: 20, $lte: 30 } }); 
+
+Output: [object Object] 
+
+
+Question 20: Write a query to find employees who are either working on Project 1 or Project 2. 
+
+Code: db.employee.find({ Project_id: { $in: [1, 2] } }); 
+
+Output: [object Object] 
+
+Question 1: Create Database: Create a MongoDB database named AIML. 
+
+Code: use('AIML'); 
+
+Output: switched to db AIML 
+
+
+Question 2: Create Collection: Create a collection named employee within the AIML database. 
+
+Code: db.createCollection('employee'); 
+
+Output: [object Object] 
+
+
+Question 1: Create Collection: Create a collection named employee within the AIML database. 
+
+Code: const employeeData = JSON.parse(fs.readFileSync('employee.json'));
+out3 = db.employee.insertMany(employeeData); 
+
+Output: [object Object] 
+
+
+Question 4: insertOne: Inserts a single document into the collection. { 'Id': 21, 'Name': 'John Doe', 'Project_id': 2, 'Hrs_worked': 35 } 
+
+Code:  db.employee.insertOne({ "Id": 21, "Name": "John Doe", "Project_id": 2, "Hrs_worked": 35 }); 
+
+Output: [object Object] 
+
+
+Question 5: insertMany: Inserts multiple documents into the collection. { 'Id': 22, 'Name': 'Jane Smith', 'Project_id': 1, 'Hrs_worked': 28 }, { 'Id': 23, 'Name': 'Alice Johnson', 'Project_id': 3, 'Hrs_worked': 42 } 
+
+Code:  db.employee.insertMany([ { "Id": 22, "Name": "Jane Smith", "Project_id": 1, "Hrs_worked": 28 }, { "Id": 23, "Name": "Alice Johnson", "Project_id": 3, "Hrs_worked": 42 } ]); 
+
+Output: [object Object] 
+
+
+Question 6: updateOne: Updates a single document that matches the filter. { 'Id': 21 }, { $set: { 'Hrs_worked': 40 } } 
+
+Code: db.employee.updateOne( { "Id": 21 }, { $set: { "Hrs_worked": 40 } }); 
+
+Output: [object Object] 
+
+
+Question 7: updateMany: Updates multiple documents that match the filter. { 'Hrs_worked': { $gt: 30 } }, { $set: { 'Overtime': true } } 
+
+Code: db.employee.updateMany( { "Hrs_worked": { $gt: 30 } }, { $set: { "Overtime": true } }); 
+
+Output: [object Object] 
+
+
+Question 8: find an employee by their ID. 
+
+Code: db.employee.findOne({ Id: 21 }); 
+
+Output: [object Object] 
+
+
+Question 9: How would you retrieve all employees who are assigned to a specific project ID?
+Code: db.employee.find({ Project_id: 2 }); 
+
+Output: [object Object] 
+
+
+Question 10: Write a query to find employees who have worked more than 30 hours. 
+
+Code: db.employee.find({ Hrs_worked: { $gt: 30 } }); 
+
+Output: [object Object] 
+
+
+Question 11: Can you demonstrate how to use the $gt operator to find employees who are older than 40? 
+
+Code: db.employee.find({ Age: { $gt: 40 } }); 
+
+Output: [object Object] 
+
+
+Question 12: Explain the purpose of sorting in MongoDB queries. 
+
+Answer: Sorting in MongoDB organizes query results based on specified fields, facilitating data analysis and presentation, improving performance with indexed fields, and enhancing user experience through ordered document retrieval. 
+
+
+Question 13: Sort the Employee table based on Age in Ascending order and display. 
+
+Code: db.employee.find().sort({ Age: 1 }); 
+
+Output: [object Object] 
+
+
+Question 14: Sort the Employee table based on Hrs_worked in Descending order and display. 
+
+Code: db.employee.find().sort({ Hrs_worked: -1 }); 
+
+Output: [object Object] 
+
+
+Question 15: Find Employee whose age is greater than 30 and Hrs_worked greater than 20. 
+
+Code: db.employee.find({ Age: { $gt: 30 }, Hrs_worked: { $gt: 20 } }); 
+
+Output: [object Object] 
+
+
+Question 16: Find Employee whose Gender is Male or Hrs_worked greater than 25. 
+
+Code: db.employee.find({ $or: [{ Gender: "Male" }, { Hrs_worked: { $gt: 25 } }] }); 
+
+Output: [object Object] 
+
+
+Question 17: Find Employee whose Project_id is not 3. 
+
+Code: db.employee.find({ Project_id: { $ne: 3 } }); 
+
+Output: [object Object] 
+
+
+Question 18: Write a MongoDB query to find all employees who are between the ages of 25 and 35. 
+
+Code: db.employee.find({ Age: { $gte: 25, $lte: 35 } }); 
+
+Output: [object Object] 
+
+
+Question 19: How would you retrieve employees who have worked between 20 and 30 hours? 
+
+Code: db.employee.find({ Hrs_worked: { $gte: 20, $lte: 30 } }); 
+
+Output: [object Object] 
+
+
+Question 20: Write a query to find employees who are either working on Project 1 or Project 2. 
+
+Code: db.employee.find({ Project_id: { $in: [1, 2] } }); 
+
+Output: [object Object] 
+
